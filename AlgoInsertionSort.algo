@@ -1,0 +1,27 @@
+FUNCTION insertionSort(arr: ARRAY_OF INTEGER) : ARRAY_OF INTEGER;
+VAR
+    i , j, temp :INTEGER;
+BEGIN
+    IF (i>0) THEN
+        FOR i FROM 1 TO arr.length-1 STEP 1  DO
+            FOR j FROM i TO 0 STEP DO
+                IF (arr[j-1] > arr[j]) THEN
+                    temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                ELSE BREAK
+                END_IF
+            END_FOR
+        END_FOR
+    END_IF
+    RETURN arr ;
+END 
+
+ALGORITHM algoInsertionSort
+VAR
+    arr: ARRAY_OF INTEGER
+BEGIN
+    write("Type the array ");
+    read(arr)
+    arr:= insertionSort(arr);
+END
